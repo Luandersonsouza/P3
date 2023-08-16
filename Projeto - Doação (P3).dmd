@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Projeto - Doação (P3)" id="BDB3347E-F144-F4DD-073E-115A34375E14" version="3.5">
+<createdBy>jlsouza</createdBy>
+<createdTime>2023-08-16 15:08:55 UTC</createdTime>
+<ownerDesignName>Projeto - Doação (P3)</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BDB3347E-F144-F4DD-073E-115A34375E14</designId>
+</OSDM_Design>
