@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <!-- Add the bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <!-- Your Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="media/logo.png" alt="Doe+ Logo" height="30">
+            </a>
+	    <div class="d-flex">
+                <a class="nav-btn" href="#">Indique uma instituição</a>
+                <a class="nav-btn" href="#">Causas</a>
+                <a class="nav-btn" href="#">Instituições de caridade</a>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Donation Form -->
+    <div class="container mt-5">
+	<h2 class="mb-4">Formulário de Doação</h2>
+	<form id="donationForm" action="#" method="post">
+        <div class="row">
+	    <!-- Left Side -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="donorName">Nome do Doador:</label>
+                    <input type="text" class="form-control" id="donorName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="text" class="form-control" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Pessoa:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pessoaType" id="fisica" value="fisica">
+                        <label class="form-check-label" for="fisica">Física</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pessoaType" id="juridica" value="juridica">
+                        <label class="form-check-label" for="juridica">Jurídica</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpf-cnpj">CPF/CNPJ:</label>
+                    <input type="text" class="form-control" id="cpf-cnpj" required>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="institution">Instituição:</label>
+                    <select class="form-control" id="institution">
+                        <!-- Add the institutions as options here -->
+			<option value="">Selecione uma Instituição</option>
+                        <option value="inst1">Example Institution 1</option>
+                        <option value="inst2">Example Institution 2</option>
+                        <!-- ... -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Método de Pagamento:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="pix" value="pix">
+                        <label class="form-check-label" for="pix">PIX</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="card" value="card">
+                        <label class="form-check-label" for="card">Cartão de Crédito</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Quantia a Doar:</label>
+                    <input list="amounts" class="form-control" id="amount" required>
+                    <datalist id="amounts">
+                        <option value="R$10">
+                        <option value="R$25">
+                        <option value="R$50">
+                        <option value="R$100">
+                    </datalist>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Doar</button>
+            </div>
+        </div>
+	</form>
+    </div>
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function(event) {
+            const institution = document.getElementById('institution').value;
+            if (institution === "") {
+                alert('Por favor, selecione uma instituição válida.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
+
