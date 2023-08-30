@@ -1,0 +1,42 @@
+/* Estilos para o formulário */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-content {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-content h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para ajustar o tamanho dos campos */
+.custom-input {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Estilos para o botão */
+.custom-btn {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+/* Estilos para o cabeçalho */
+.navbar {
+    margin-bottom: -60px;
+}
