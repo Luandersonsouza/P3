@@ -1,0 +1,27 @@
+.content-wrapper {
+    margin-bottom: 40px; /* Ajuste o valor conforme necessário */
+}
+/* Estilização básica para a lista de instituições */
+.institution-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.institution-list-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.institution-list-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Ícone ao lado do nome da instituição (você pode adicionar ícones via HTML ou CSS) */
+.institution-list-item::before {
+    content: "🏦"; /* Substitua pelo ícone desejado */
+    margin-right: 10px;
+    font-size: 20px;
+}

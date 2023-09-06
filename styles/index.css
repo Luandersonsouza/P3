@@ -30,7 +30,10 @@ body {
     flex-direction: column;
     justify-content: space-between; /* This will ensure that content inside doesn't get squashed and remains spaced out */
 }
-
+.card-description {
+    max-height: 150px; /* Altura máxima para a descrição */
+    overflow: hidden; /* Oculta o texto que ultrapassar a altura máxima */
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -39,6 +42,10 @@ body {
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+.card-img-top{
+    max-width: 100%; 
+    height: auto;
 }
 
 .nav-btn {
@@ -99,7 +106,3 @@ body {
     opacity: 0.7;
 }
 
-.card-img-top{
-    max-width: 100%; 
-    height: auto;
-}
