@@ -16,7 +16,18 @@
         <a class="navbar-brand" href="index.html">
             <img src="media/logo.png" alt="Doe+ Logo" height="30">
         </a>
-	<div class="d-flex">
+	   <div class="d-flex">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="q" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fas fa-search"></i> 
+                        </button>
+                    </div>
+                </div>
+            </form>
+
             <a class="nav-btn" href="indicacao.html">Indique uma instituição</a>
             <a class="nav-btn" href="causa - social.html">Causas</a>
             <a class="nav-btn" href="insituicoes.html">Instituições de caridade</a>
