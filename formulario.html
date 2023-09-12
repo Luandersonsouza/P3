@@ -65,14 +65,10 @@
             <!-- Right Side -->
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="institution">Instituição:</label>
-                    <select class="form-control" id="institution">
-                        <!-- Add the institutions as options here -->
-			            <option value="">Value Default</option>
-                        <option value="inst1">Example Institution 1</option>
-                        <option value="inst2">Example Institution 2</option>
-                        <!-- ... -->
-                    </select>
+                    <div class="form-group">
+                        <label for="institution">Instituição:</label>
+                        <input type="text" class="form-control" id="institution">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Método de Pagamento:</label>
@@ -104,15 +100,6 @@
         </div>
 	</form>
     </div>
-    <script>
-        document.getElementById('donationForm').addEventListener('submit', function(event) {
-            const institution = document.getElementById('institution').value;
-            if (institution === "") {
-                alert('Por favor, selecione uma instituição válida.');
-                event.preventDefault();
-            }
-        });
-    </script>
 <footer class="footer bg-dark text-white py-4">
     <div class="container">
         <div class="row">
@@ -141,6 +128,30 @@
         </div>  
     </div>
 </footer>
+<script>
+    // Função para obter parâmetros da URL
+    function obterParametroUrl(nome) {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        return urlSearchParams.get(nome);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obter o nome da instituição dos parâmetros da URL
+        const nomeInstituicao = obterParametroUrl("nome");
+
+        // Preencher o campo do formulário com o nome da instituição
+        document.getElementById("institution").value = nomeInstituicao;
+
+        // Adicione aqui o código para processar o formulário de doação
+        const formDoacao = document.getElementById("formDoacao");
+        formDoacao.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Adicione aqui o código para enviar a doação
+            alert("Doação enviada!"); // Exemplo de ação após o envio da doação
+        });
+    });
+</script>
+
 </body>
 </html>
 
