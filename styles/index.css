@@ -1,10 +1,11 @@
-body {
+.body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    padding - top: 80px ; 
+    padding-top: 80px;
     background-color: #f0f0f0;
 }
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -13,6 +14,7 @@ body {
     transition: background-color 0.5s ease;
     margin-bottom: 0px;
 }
+
 .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
@@ -21,27 +23,40 @@ body {
 .custom-search-form {
     display: flex;
     align-items: center;
-    margin-right: 15px; /* Espaço à direita para ajustar a posição na barra de navegação */
+    margin-right: 15px;
+    /* Espaço à direita para ajustar a posição na barra de navegação */
 }
+
 .custom-search-input {
     /* Estilo para o campo de entrada de pesquisa */
-    width: 200px; /* Largura personalizada */
-    padding: 10px; /* Espaçamento interno personalizado */
-    border: 1px solid #ccc; /* Borda personalizada */
-    border-radius: 5px 0 0 5px; /* Cantos arredondados no lado esquerdo */
+    width: 200px;
+    /* Largura personalizada */
+    padding: 10px;
+    /* Espaçamento interno personalizado */
+    border: 1px solid #ccc;
+    /* Borda personalizada */
+    border-radius: 5px 0 0 5px;
+    /* Cantos arredondados no lado esquerdo */
 }
+
 .custom-search-button {
     /* Estilo para o botão de pesquisa */
-    background-color: #007bff; /* Cor de fundo personalizada */
-    color: white; /* Cor do texto personalizada */
+    background-color: #007bff;
+    /* Cor de fundo personalizada */
+    color: white;
+    /* Cor do texto personalizada */
     border: none;
-    border-radius: 0 5px 5px 0; /* Cantos arredondados no lado direito */
-    padding: 10px 15px; /* Espaçamento interno personalizado */
+    border-radius: 0 5px 5px 0;
+    /* Cantos arredondados no lado direito */
+    padding: 10px 15px;
+    /* Espaçamento interno personalizado */
     cursor: pointer;
 }
+
 /* Ícone de pesquisa */
 .custom-search-button i {
-    margin-right: 5px; /* Espaço à direita do ícone */
+    margin-right: 5px;
+    /* Espaço à direita do ícone */
 }
 
 .banner {
@@ -50,8 +65,10 @@ body {
     height: 46vh;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative; /* Adicione isso para ajustar o posicionamento do banner */
-    z-index: 0; /* Certifique-se de que o banner esteja por trás da navbar */
+    position: relative;
+    /* Adicione isso para ajustar o posicionamento do banner */
+    z-index: 0;
+    /* Certifique-se de que o banner esteja por trás da navbar */
 }
 
 /* Aplique margem superior negativa para que o banner fique sob a barra de navegação */
@@ -64,61 +81,86 @@ body {
     text-decoration: none;
     transition: 0.3s;
 }
+
 .nav-btn:hover {
     background-color: white;
     color: black;
 }
 
 .card {
-    height: 470px; /* or whatever height you want */
+    height: 470px;
+    /* or whatever height you want */
     display: flex;
     flex-direction: column;
 }
+
 .card-body {
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This will ensure that content inside doesn't get squashed and remains spaced out */
+    justify-content: space-between;
+    /* This will ensure that content inside doesn't get squashed and remains spaced out */
 }
+
 .card-description {
-    max-height: 150px; /* Altura máxima para a descrição */
-    overflow: hidden; /* Oculta o texto que ultrapassar a altura máxima */
+    max-height: 150px;
+    /* Altura máxima para a descrição */
+    overflow: hidden;
+    /* Oculta o texto que ultrapassar a altura máxima */
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-.card-img-top{
-    max-width: 100%; 
+
+.card-img-top {
+    max-width: 100%;
     height: auto;
 }
 
 .donate-btn {
-    /*background-color: #f44336;*/  /* red */
-    background-color: #4CAF50;	/* green */
-    /*background-color: #007BFF;*/ /* blue */
-    /*background-color: #FFC107;*/ /* yellow */
-    /*background-color: #9C27B0;*/ /* purple */
+    /*background-color: #f44336;*/
+    /* red */
+    background-color: #4CAF50;
+    /* green */
+    /*background-color: #007BFF;*/
+    /* blue */
+    /*background-color: #FFC107;*/
+    /* yellow */
+    /*background-color: #9C27B0;*/
+    /* purple */
     color: white;
-    padding: 15px 30px;  /* Slightly bigger than other buttons */
-    font-size: 1.2rem;  /* Bigger font size */
+    padding: 15px 30px;
+    /* Slightly bigger than other buttons */
+    font-size: 1.2rem;
+    /* Bigger font size */
     border: none;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);  /* subtle shadow to give depth */
-    transition: all 0.3s;  /* smooth transition for hover effects */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    /* subtle shadow to give depth */
+    transition: all 0.3s;
+    /* smooth transition for hover effects */
 }
 
 .donate-btn:hover {
-    /*background-color: #d32f2f;*/  /* red */
-    background-color: #087f23; /* green */
-    /*background-color: #0056b3;*/ /* blue */
-    /*background-color: #b28704;*/ /* yellow */
-    /*background-color: #6a007c;*/ /* purle */
-    transform: scale(1.05);  /* slightly enlarge the button */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);  /* increased shadow on hover for more depth */
+    /*background-color: #d32f2f;*/
+    /* red */
+    background-color: #087f23;
+    /* green */
+    /*background-color: #0056b3;*/
+    /* blue */
+    /*background-color: #b28704;*/
+    /* yellow */
+    /*background-color: #6a007c;*/
+    /* purle */
+    transform: scale(1.05);
+    /* slightly enlarge the button */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    /* increased shadow on hover for more depth */
 }
 
 .donate-btn:focus {
@@ -140,4 +182,3 @@ body {
     text-decoration: none;
     opacity: 0.7;
 }
-
