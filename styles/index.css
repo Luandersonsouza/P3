@@ -19,44 +19,39 @@
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Estilização do formulário de pesquisa */
+.bg-solid {
+    background-color: #333; 
+}
+
+
 .custom-search-form {
     display: flex;
     align-items: center;
     margin-right: 15px;
-    /* Espaço à direita para ajustar a posição na barra de navegação */
+
 }
 
 .custom-search-input {
-    /* Estilo para o campo de entrada de pesquisa */
+
     width: 200px;
-    /* Largura personalizada */
     padding: 10px;
-    /* Espaçamento interno personalizado */
     border: 1px solid #ccc;
-    /* Borda personalizada */
     border-radius: 5px 0 0 5px;
-    /* Cantos arredondados no lado esquerdo */
 }
 
 .custom-search-button {
-    /* Estilo para o botão de pesquisa */
+
     background-color: #007bff;
-    /* Cor de fundo personalizada */
     color: white;
-    /* Cor do texto personalizada */
     border: none;
     border-radius: 0 5px 5px 0;
-    /* Cantos arredondados no lado direito */
     padding: 10px 15px;
-    /* Espaçamento interno personalizado */
     cursor: pointer;
 }
 
-/* Ícone de pesquisa */
 .custom-search-button i {
+
     margin-right: 5px;
-    /* Espaço à direita do ícone */
 }
 
 .banner {
@@ -66,12 +61,8 @@
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
-    /* Adicione isso para ajustar o posicionamento do banner */
     z-index: 0;
-    /* Certifique-se de que o banner esteja por trás da navbar */
 }
-
-/* Aplique margem superior negativa para que o banner fique sob a barra de navegação */
 
 .nav-btn {
     color: white;
@@ -88,25 +79,24 @@
 }
 
 .card {
+
     height: 470px;
-    /* or whatever height you want */
     display: flex;
     flex-direction: column;
 }
 
 .card-body {
+
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* This will ensure that content inside doesn't get squashed and remains spaced out */
 }
 
 .card-description {
+
     max-height: 150px;
-    /* Altura máxima para a descrição */
     overflow: hidden;
-    /* Oculta o texto que ultrapassar a altura máxima */
 }
 
 .card {
@@ -136,14 +126,10 @@
     /* purple */
     color: white;
     padding: 15px 30px;
-    /* Slightly bigger than other buttons */
     font-size: 1.2rem;
-    /* Bigger font size */
     border: none;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    /* subtle shadow to give depth */
     transition: all 0.3s;
-    /* smooth transition for hover effects */
 }
 
 .donate-btn:hover {
@@ -160,7 +146,6 @@
     transform: scale(1.05);
     /* slightly enlarge the button */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-    /* increased shadow on hover for more depth */
 }
 
 .donate-btn:focus {
