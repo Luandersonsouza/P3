@@ -1,0 +1,14 @@
+/* Estilo para o formulário */
+form {
+    margin-top: 20px; /* Adicione margem superior conforme necessário */
+}
+
+/* Estilo para campos do formulário */
+.form-group {
+    margin-bottom: 20px; /* Adicione margem inferior conforme necessário */
+}
+
+.btn {
+
+    margin-bottom: 30px;
+}
