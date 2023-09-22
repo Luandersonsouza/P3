@@ -4,8 +4,8 @@
 }
 
 /* Estilo para o formulário */
-form {
-    margin-top: 20px; /* Adicione margem superior conforme necessário */
+.content {
+    padding: 40px; /* Adicione margem superior conforme necessário */
 }
 
 /* Estilo para campos do formulário */
