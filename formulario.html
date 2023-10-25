@@ -33,6 +33,7 @@
     <div class="content mt-5">
         <h2 class="mb-4">Formulário de Doação</h2>
         <form id="donationForm" class="mt-4" action="#" method="post">
+            <input type="hidden" name="metodoPagamentoEscolhido" id="metodoPagamentoEscolhido" value="">
             <div class="row">
                 <!-- Left Side -->
                 <div class="col-md-6">
@@ -154,6 +155,33 @@
                 alert("Doação enviada!"); // Exemplo de ação após o envio da doação
             });
         });
+        const radioQR = document.getElementById("pix");
+        const radioBoleto = document.getElementById("card");
+        const metodoPagamentoEscolhido = document.getElementById("metodoPagamentoEscolhido");
+
+        radioQR.addEventListener("change", function () {
+            metodoPagamentoEscolhido.value = "qr_code";
+        });
+
+        radioBoleto.addEventListener("change", function () {
+            metodoPagamentoEscolhido.value = "boleto";
+        });
+        const formDoacao = document.getElementById("donationForm");
+        formDoacao.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Verifica a escolha do usuário
+            const escolhaPagamento = metodoPagamentoEscolhido.value;
+
+            // Redireciona o usuário para a página apropriada
+            if (escolhaPagamento === "qr_code") {
+                window.location.href = "pagamentoQrCode.html";
+            } else if (escolhaPagamento === "boleto") {
+                window.location.href = "pagamentoBoleto.html";
+            }
+        });
+
+
     </script>
 </body>
 </html>
