@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code de Pagamento</title>
+</head>
+<body>
+    <h1>QR Code de Pagamento</h1>
+    <!-- Elemento canvas onde o QR code será renderizado -->
+    <canvas id="qr-code"></canvas>
+
+    <!-- Carregue a biblioteca qrious via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <script>
+        // Criar e configurar o QR code
+        function createQRCode() {
+            // Recupere o valor do QR code que você deseja gerar (por exemplo, um link de pagamento)
+            const qrCodeValue = "https://exemplo.com/link-de-pagamento";
+
+            // Crie uma instância da biblioteca qrious
+            const qr = new QRious({
+                element: document.getElementById("qr-code"),
+                value: qrCodeValue,
+                size: 200 // Tamanho do QR code (pode ser personalizado)
+            });
+        }
+
+        // Execute a função assim que a página for carregada
+        window.onload = createQRCode;
+    </script>
+</body>
+</html>
