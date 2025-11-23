@@ -1,195 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doe+</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Doe+ conecta doadores com instituições de caridade que mais precisam de ajuda">
+    <title>Doe+ | Conectando Doadores e Causas Sociais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="styles/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- <div class="spaceReserv"></div> -->
-    <!-- Header and Navigation -->
-    <nav class="navbar fixed-top">
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="media/logo.png" class="logoImg" alt="Doe+ Logo" height="30">
+                <img src="media/logo.png" alt="Doe+ Logo" class="logo-img">
             </a>
-            <div class="d-flex">
-                <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
-                    <div class="input-group">
-                        <input class="form-control" type="search" name="q" placeholder="Pesquisar"
-                            aria-label="Pesquisar">
-                        <div class="input-group-append">
-                            <button class=" btn btn-outline-success searchNvBar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <div class="btnsNavbar ">
-                    <a class="nav-btn" href="indicacao.html">Indique uma instituição</a>
-                    <a class="nav-btn" href="causa - social.html">Causas</a>
-                    <a class="nav-btn" href="insituicoes.html">Instituições de caridade</a>
-                </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="causa-social.html">
+                            <i class="fas fa-heart me-1"></i> Causas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insituicoes.html">
+                            <i class="fas fa-building me-1"></i> Instituições
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indicacao.html">
+                            <i class="fas fa-plus-circle me-1"></i> Indicar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-donate" href="formulario.html">
+                            <i class="fas fa-hand-holding-heart me-2"></i> Doar Agora
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    <script>
-        const navbar = document.querySelector('.navbar');
 
-        // Defina a altura em pixels a partir do topo da página onde a cor sólida será aplicada
-        const scrollThreshold = 10; // Substitua 200 pela altura desejada em pixels
-
-        // Adicione um evento de rolagem à página
-        window.addEventListener('scroll', function () {
-            // Verifique a posição vertical atual da página
-            const scrollPosition = window.scrollY;
-
-            // Se a posição vertical for maior que a altura do banner (scrollThreshold),
-            // aplique a classe bg-solid à navbar; caso contrário, remova-a
-            if (scrollPosition > scrollThreshold) {
-                navbar.classList.add('bg-solid');
-            } else {
-                navbar.classList.remove('bg-solid');
-            }
-        });
-    </script>
-    <!-- Banner Section -->
-    <div class="banner container-fluid">
-        <div class="row h-100 align-items-center ">
-            <div class="col-lg-6 mx-auto text-center">
-                <h1>Bem-vindo ao <img class="cabecalho" src="media/logo.png" alt="Doe+ Logo" height="60"></h1>
-                <p>Nossa missão é ajudar a conectar os doadores com as causas que mais precisam deles.</p>
-                <button onclick="window.location.href='formulario.html'" class="donate-btn">DOE agora</button>
+    <!-- Banner Hero -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        
+        <!-- Logo Doe+ Gigante que diminui ao rolar -->
+        <div class="hero-logo-wrapper">
+            <img src="media/logo.png" alt="Doe+" class="hero-logo-large">
+        </div>
+        
+        <div class="container hero-content">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="hero-title animate-fade-in">
+                        Transforme Vidas com sua <span class="highlight">Generosidade</span>
+                    </h1>
+                    <p class="hero-subtitle animate-fade-in-delay">
+                        Conectamos doadores a causas sociais que realmente precisam de apoio. 
+                        Juntos, podemos fazer a diferença.
+                    </p>
+                    <div class="hero-buttons animate-fade-in-delay-2">
+                        <a href="formulario.html" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-hand-holding-heart me-2"></i> Fazer uma Doação
+                        </a>
+                        <a href="#instituicoes" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-search me-2"></i> Conhecer Instituições
+                        </a>
+                    </div>
+                    
+                    <!-- Estatísticas -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Crianças Atendidas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Instituições Parceiras</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Famílias Ajudadas</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Causes Section -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- First Row of Cards -->
-
-            <!-- First Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="logo - instituições/AMA_Logo.png" class="card-img-top"
-                        alt="Logo Associação de Amigos do Autista de Alagoas">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">AMA</h5>
-                        <p class="card-text">Associação de Amigos do Autista de Alagoas.</p>
-                        <a href="AMA.html" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Second Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="logo - instituições/CUFA_Logo(2).jpg" class="card-img-top"
-                        alt="Logo Central Única das Favelas">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">CUFA</h5>
-                        <p class="card-text">
-                            Central Única das Favelas.
-                        </p>
-                        <a href="CUFA.html" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Third Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="logo - instituições/CASCA_logo.png" class="card-img-top"
-                        alt="Logo do projeto social CASCA ">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">CASCA</h5>
-                        <p class="card-text">
-                            Centro de Ação Social para Crianças e Adolescentes.
-                        </p>
-                        <a href="CASCA.html" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second Row of Cards -->
-
-            <!-- Fourth Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="media/cause.jpg" class="card-img-top" alt="Cause Image 4">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">Cause Name 4</h5>
-                        <p class="card-text">Short description about the fifth cause.</p>
-                        <a href="AMA" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fifth Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="media/cause.jpg" class="card-img-top" alt="Cause Image 5">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">Cause Name 5</h5>
-                        <p class="card-text">Short description about the fifth cause.</p>
-                        <a href="#" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sixth Card -->
-            <div class="col-lg-4 mb-4">
-                <div class="card-img-top">
-                    <img src="media/cause.jpg" class="card-img-top" alt="Cause Image 6">
-                    <div class="card-body card-description">
-                        <h5 class="card-title">Cause Name 6</h5>
-                        <p class="card-text">Short description about the sixth cause.</p>
-                        <a href="#" class="btn btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <a href="#instituicoes" aria-label="Rolar para instituições">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
-    </div>
-    <footer>
-        <div class="footerContainer">
-            <!-- Contact Info -->
-            
-                <div class="contactInfo">
-                    <h4>Contate-nos</h4>
-                    <p>Email: contact@doeplus.org</p>
-                    <p>Phone: +1 (123) 456-7890</p>
-                    <p>Address: 123 Doe St, City, Country</p>
+    </section>
+
+    <!-- Seção de Instituições -->
+    <section class="institutions-section" id="instituicoes">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Nossas Parceiras</span>
+                <h2 class="section-title">Instituições que Fazem a Diferença</h2>
+                <p class="section-description">
+                    Conheça as organizações comprometidas em transformar a realidade de comunidades em Alagoas
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card AMA -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="institution-card">
+                        <div class="card-image-wrapper">
+                            <img src="logo - instituições/AMA_Logo.png" alt="Logo AMA" class="card-image">
+                            <div class="card-overlay">
+                                <a href="AMA.html" class="btn btn-light">
+                                    <i class="fas fa-arrow-right me-2"></i> Saiba Mais
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">
+                                <i class="fas fa-puzzle-piece me-2"></i> Autismo
+                            </div>
+                            <h3 class="card-title">AMA</h3>
+                            <p class="card-description">
+                                Associação de Amigos do Autista de Alagoas. Referência no tratamento 
+                                multidisciplinar para crianças e adolescentes com Transtorno do Espectro Autista.
+                            </p>
+                            <div class="card-footer">
+                                <a href="AMA.html" class="card-link">
+                                    Ver detalhes <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
-                <!-- Social Media Links -->
-                <div class="socialMedia">
-                    <h4>Siga-nos</h4>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Card CUFA -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="institution-card">
+                        <div class="card-image-wrapper">
+                            <img src="logo - instituições/CUFA_Logo(2).jpg" alt="Logo CUFA" class="card-image">
+                            <div class="card-overlay">
+                                <a href="CUFA.html" class="btn btn-light">
+                                    <i class="fas fa-arrow-right me-2"></i> Saiba Mais
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">
+                                <i class="fas fa-users me-2"></i> Inclusão Social
+                            </div>
+                            <h3 class="card-title">CUFA</h3>
+                            <p class="card-description">
+                                Central Única das Favelas. Promove cultura, educação e cidadania através 
+                                de atividades de hip hop, esportes e projetos sociais nas comunidades.
+                            </p>
+                            <div class="card-footer">
+                                <a href="CUFA.html" class="card-link">
+                                    Ver detalhes <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="realization">
-                    <h4>Realização</h4>
-                    <a href="https://ufal.br/" target="_blank" class="d-flex align-items-center">
-                        <img src="logo - instituições/logo - ufal.png" alt="Logo Confidencialidade">
+
+                <!-- Card CASCA -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="institution-card">
+                        <div class="card-image-wrapper">
+                            <img src="logo - instituições/CASCA_logo.png" alt="Logo CASCA" class="card-image">
+                            <div class="card-overlay">
+                                <a href="CASCA.html" class="btn btn-light">
+                                    <i class="fas fa-arrow-right me-2"></i> Saiba Mais
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-category">
+                                <i class="fas fa-child me-2"></i> Crianças e Adolescentes
+                            </div>
+                            <h3 class="card-title">CASCA</h3>
+                            <p class="card-description">
+                                Centro de Ação Social para Crianças e Adolescentes. Atende mais de 150 jovens 
+                                em Delmiro Gouveia com projetos educacionais e culturais.
+                            </p>
+                            <div class="card-footer">
+                                <a href="CASCA.html" class="card-link">
+                                    Ver detalhes <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-5">
+                <a href="insituicoes.html" class="btn btn-outline-primary btn-lg">
+                    Ver Todas as Instituições <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Como Funciona -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Processo Simples</span>
+                <h2 class="section-title">Como Fazer sua Doação</h2>
+                <p class="section-description">Em apenas 3 passos, você pode transformar vidas</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="step-title">Escolha uma Causa</h3>
+                        <p class="step-description">
+                            Navegue pelas instituições e causas sociais. Encontre aquela que mais 
+                            toca seu coração.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3 class="step-title">Defina o Valor</h3>
+                        <p class="step-description">
+                            Escolha o valor que deseja doar. Qualquer quantia faz diferença e é bem-vinda.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="step-title">Faça a Diferença</h3>
+                        <p class="step-description">
+                            Complete sua doação via PIX ou Boleto. Sua generosidade transforma vidas!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title">Pronto para fazer a diferença?</h2>
+                    <p class="cta-description">
+                        Sua doação pode mudar a vida de dezenas de pessoas. Comece agora!
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-3 mt-lg-0">
+                    <a href="formulario.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-hand-holding-heart me-2"></i> Doar Agora
                     </a>
                 </div>
-            
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Estatísticas do Rodapé -->
+            <div class="footer-stats">
+                <div class="footer-stat-item">
+                    <div class="footer-stat-number">150+</div>
+                    <div class="footer-stat-label">Crianças Atendidas</div>
+                </div>
+                <div class="footer-stat-item">
+                    <div class="footer-stat-number">3</div>
+                    <div class="footer-stat-label">Instituições Parceiras</div>
+                </div>
+                <div class="footer-stat-item">
+                    <div class="footer-stat-number">200+</div>
+                    <div class="footer-stat-label">Famílias Ajudadas</div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Principal do Footer -->
+            <div class="row g-4 footer-main">
+                <div class="col-lg-5">
+                    <div class="footer-brand">
+                        <img src="media/logo.png" alt="Doe+ Logo" height="50">
+                        <p class="footer-description">
+                            Conectando doadores com causas que transformam vidas em Alagoas.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="causa-social.html">Causas</a></li>
+                        <li><a href="insituicoes.html">Instituições</a></li>
+                        <li><a href="indicacao.html">Indicar Instituição</a></li>
+                        <li><a href="formulario.html">Fazer Doação</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:contact@doeplus.org">contact@doeplus.org</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Maceió, Alagoas, BR
+                        </li>
+                    </ul>
+                    <div class="footer-partner mt-4">
+                        <p class="mb-2">Realização:</p>
+                        <a href="https://ufal.br/" target="_blank" rel="noopener">
+                            <img src="logo - instituições/logo - ufal.png" alt="UFAL" height="45">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Doe+. Feito com <i class="fas fa-heart"></i> em Alagoas</p>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
